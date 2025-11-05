@@ -1,14 +1,17 @@
 services:
   db:
     image: postgres:16
+    container_name: pedidos-db
     environment:
       POSTGRES_USER: app
       POSTGRES_PASSWORD: app
       POSTGRES_DB: pedidos
     ports:
       - "5432:5432"
+
   rabbit:
     image: rabbitmq:3-management
+    container_name: pedidos-rabbit
     ports:
       - "5672:5672"
       - "15672:15672"
