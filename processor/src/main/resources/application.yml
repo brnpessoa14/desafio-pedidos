@@ -1,0 +1,21 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: processor
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pedidos
+    username: app
+    password: app
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+app:
+  queue:
+    pedidosRecebidos: pedidos.recebidos
